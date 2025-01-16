@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="content-section">
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-danger" role="alert">
+        {{ message }}
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    <div class="media">
+        <div class="media-body">
+            <h2 class="account-heading">{{ user.username }}</h2>
+            <p class="text-secondary">{{ user.email }}</p>
+        </div>
+    </div>
+
+    <!-- Profilio informacija, kurią galima redaguoti tik paspaudus "Redaguoti" -->
+    {% if not is_editing %}
+    <div class="profile-info">
+        <p><strong>Vardas:</strong> {{ user.first_name }}</p>
+        <p><strong>Pavardė:</strong> {{ user.last_name }}</p>
+        <p><strong>Amžius:</strong> {{ user.profile.age }}</p>
+        <button class="btn btn-outline-warning" id="edit-btn">Redaguoti</button>
+    </div>
+    {% else %}
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Profilio informacija</legend>
+            {{ u_form|crispy }}
+            {{ p_form|crispy }}
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-outline-info" type="submit">Atnaujinti</button>
+        </div>
+    </form>
+    {% endif %}
+</div>
+
+<script>
+    // Redaguoti mygtuko funkcionalumas
+    const editBtn = document.getElementById('edit-btn');
+    if (editBtn) {
+        editBtn.addEventListener('click', function() {
+            // Keičiamas "is_editing" parametras
+            window.location.href = "{% url 'profile' %}?edit=true";
+        });
+    }
+</script>
+
+{% endblock content %}

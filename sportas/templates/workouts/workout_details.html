@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Sporto programa {{ category|capfirst }}</h1>
+
+{% if workouts %}
+    <div class="workout-plan">
+        {% for day, exercises in workouts.items %}
+            <h3>{{ day }}</h3>
+            <ul>
+                {% for exercise in exercises %}
+                    <li>{{ exercise.exercise }}: {{ exercise.sets_reps }}</li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+    </div>
+{% else %}
+    <p>No workouts found for this category.</p>
+{% endif %}
+
+<a href="{% url 'workouts' %}" class="btn btn-primary">Grįžti atgal</a>
+{% endblock %}

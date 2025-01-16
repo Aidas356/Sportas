@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center">{{ title }}</h1>
+    <p class="text-center">{{ description }}</p>
+
+    <div class="mt-4">
+        <h3>Maisto planas:</h3>
+        <ul class="list-group">
+            {% for meal in meals %}
+                <li class="list-group-item">
+                    <strong>{{ meal.name }}:</strong> {{ meal.details }}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container mt-5">
+        <!-- Hero sekcija -->
+        <div class="hero-section text-center mb-5">
+            <h1 class="display-4">Sportas, Mityba</h1>
+            <p class="lead">Sveiki atvykę į mūsų sveikos gyvensenos puslapį! Čia rasite įvairius sporto, mitybos ir papildų sprendimus, kad pasiektumėte savo tikslus.</p>
+            <a href="{% url 'login' %}" class="btn btn-primary btn-lg">Prisijungti dabar</a>
+        </div>
+
+        <hr>
+
+        <!-- Statistika -->
+        <h2 class="text-primary text-center">Statistika</h2>
+        <p class="text-muted text-center">Šiame puslapyje rasite įvairių sporto ir mitybos programų bei papildų, kurie padės jums siekti geresnės sveikatos ir kūno formos.</p>
+
+        <div class="row">
+            <!-- Sporto programos -->
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Sporto programos</h5>
+                        <p class="card-text">Įvairios sporto programos, skirtos įvairiems tikslams, nuo svorio metimo iki raumenų auginimo.</p>
+                        <a href="{% url 'workouts' %}" class="btn btn-primary">Peržiūrėti sporto programas</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Mitybos programos -->
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Mitybos programos</h5>
+                        <p class="card-text">Mitybos planai, kurie padės pasiekti norimus tikslus – sveiką kūną, gerą savijautą ir energiją.</p>
+                        <a href="{% url 'meals' %}" class="btn btn-primary">Peržiūrėti mitybos programas</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Sporto papildai -->
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Sporto papildai</h5>
+                        <p class="card-text">Sporto papildai, kurie gali padėti pasiekti geresnių rezultatų treniruotėse ir atsigauti po jų.</p>
+                        <a href="{% url 'supplement_list' %}" class="btn btn-primary">Peržiūrėti sporto papildus</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Atsiliepimai -->
+        <div class="testimonials mt-5">
+            <h2 class="text-center">Atsiliepimai</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="testimonial">
+                        <p>"Ši programa padėjo man pasiekti mano svorio metimo tikslus! Labai rekomenduoju!"</p>
+                        <p><strong>- Tomas</strong></p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="testimonial">
+                        <p>"Puikūs treniruotės ir mitybos patarimai. Dabar jaučiuosi stipresnis ir energingesnis!"</p>
+                        <p><strong>- Paulius</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pabaiga -->
+        <p class="text-center mt-5 text-muted">Pasirūpinkite savo sveikata ir gerove – pradėkite šiandien!</p>
+    </div>
+{% endblock %}

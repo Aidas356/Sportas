@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Paieškos rezultatai: "{{ query }}"</h2>
+
+    {% if search_results %}
+        <ul>
+            {% for result in search_results %}
+                <li>
+                    {% if result.class_name == 'Workout' %}
+                        <a href="{% url 'workout_detail' result.id %}">{{ result.title }}</a> - {{ result.description }}
+                    {% elif result.class_name == 'Exercise' %}
+                        <a href="{% url 'exercise_detail' result.id %}">{{ result.name }}</a> - {{ result.description }}
+                    {% elif result.class_name == 'Supplement' %}
+                        <a href="{% url 'supplement_detail' result.id %}">{{ result.name }}</a> - {{ result.description }}
+                    {% elif result.class_name == 'FoodProgram' %}
+                        <a href="{% url 'food_program_detail' result.id %}">{{ result.name }}</a> - {{ result.description }}
+                    {% elif result.class_name == 'Meal' %}
+                        <a href="{% url 'meal_detail' result.id %}">{{ result.meal_name }}</a> - {{ result.description }}
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Rezultatų nerasta.</p>
+    {% endif %}
+{% endblock %}

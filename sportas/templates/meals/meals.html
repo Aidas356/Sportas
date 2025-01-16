@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Pasirinkite maisto programą{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Pasirinkite tikslą, kuris atitinka jūsų poreikius</h2>
+
+    <!-- Mygtukai pagal tikslus -->
+    <div class="d-flex justify-content-center flex-wrap mb-5">
+        <a href="?goal=weight_loss" class="btn btn-primary goal-btn mx-2">Svorio metimas</a>
+        <a href="?goal=muscle_gain" class="btn btn-success goal-btn mx-2">Raumenų auginimas</a>
+        <a href="?goal=healthy_eating" class="btn btn-warning goal-btn mx-2">Sveika mityba</a>
+    </div>
+
+    <!-- Programų sąrašas pagal pasirinktą tikslą -->
+    <div class="program-list">
+        {% if goal %}
+            <h3 class="mb-4">Pasirinkta programa: {{ goal|capfirst }}</h3>
+            <ul class="list-group">
+                {% for item in programs %}
+                    <li class="list-group-item">{{ item }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p class="text-center">Pasirinkus tikslą, čia bus rodomos atitinkamos programos.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

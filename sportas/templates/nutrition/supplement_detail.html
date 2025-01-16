@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center mb-4">{{ supplement.name }}</h1>
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Aprašymas:</h3>
+            <p>{{ supplement.long_description }}</p>
+        </div>
+        <div class="col-md-6">
+            <h3>Kiekis:</h3>
+            <p>{{ supplement.dose }}</p>
+            <h3>Vartojimo dažnis:</h3>
+            <p>{{ supplement.usage }}</p>
+        </div>
+    </div>
+    <div class="mt-4">
+        <a href="{% url 'supplement_list' %}" class="btn btn-secondary">Grįžti į sąrašą</a>
+    </div>
+</div>
+{% endblock %}

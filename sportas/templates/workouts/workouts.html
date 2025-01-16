@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Sporto programos</h1>
+    <p class="text-center">Pasirinkite savo kategorija kuria norite perziureti:</p>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        {% for category in categories %}
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">{{ category.name }}</h5>
+                    <p class="card-text"> {{ category.name }} pades pasiekti savo norimu tikslu</p>
+                </div>
+                <div class="card-footer text-center">
+                    <a href="{% url 'workout_details' category.slug %}" class="btn btn-primary">Perziureti pratimus</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
