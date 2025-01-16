@@ -1,0 +1,118 @@
+/* Pagrindinio fono nustatymas */
+body {
+    background: linear-gradient(to right, #4facfe, #00f2fe); /* Gradientas */
+    background-attachment: fixed;
+    background-size: cover;
+    color: #333; /* Teksto spalva */
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Užtikrins, kad fonas apimtų visą aukštį */
+}
+
+/* Hero sekcija */
+.hero-section {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 50px 20px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    color: white;
+}
+
+/* Hero sekcijos antraštė ir tekstas */
+.hero-section h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero-section p {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+}
+
+/* Hero sekcijos mygtukai */
+.hero-section .btn {
+    margin: 10px;
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.hero-section .btn:hover {
+    background-color: #00f2fe;
+    color: #fff;
+}
+
+/* Pagrindinis turinio konteineris */
+.content-wrapper {
+    background-color: rgba(255, 255, 255, 0.95); /* Pusiau permatomas fonas */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+/* Navigacijos juosta */
+.navbar-brand.logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #00f2fe !important;
+}
+
+.navbar {
+    border-bottom: 2px solid #00f2fe;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Mygtukai navigacijoje */
+.nav-link {
+    border: 2px solid transparent;
+    padding: 8px 12px;
+    transition: all 0.3s ease;
+}
+
+.nav-link.active,
+.nav-link:hover {
+    border-color: #00f2fe;
+    color: #00f2fe !important;
+}
+
+/* Paieškos formos efektai */
+.search-form input:focus {
+    border-color: #00f2fe;
+    box-shadow: 0 0 5px rgba(0, 242, 254, 0.5);
+}
+
+/* Reponsive dizainas */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-section p {
+        font-size: 1rem;
+    }
+
+    .hero-section .btn {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    .content-wrapper {
+        padding: 15px;
+    }
+}
+
+.goal-btn {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.goal-btn:hover {
+    opacity: 0.8;
+}
