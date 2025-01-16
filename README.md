@@ -92,6 +92,6 @@ web/ – Pagrindinė aplikacija su visais funkcionalumais.
 
 templates/ – HTML šablonai.
 
-static/ – CSS, JavaScript ir kiti statiniai failai.
+static/ – CSS
 
 
