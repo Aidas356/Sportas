@@ -16,7 +16,7 @@ Galimybė peržiūrėti ir redaguoti savo profilį (vardas, pavardė, amžius ir
 
 4.Mitybos stebėjimas
 
-Sekite savo dienos racioną ir kalorijų suvartojimą.
+Sekite savo dienos racioną
 Galima pasitikrinti kiek kaloriju reikia suvartoti
 
 5. Galima susiskaiciuoti savo Kmi ir kiek kcal reikia suvartoti pagal svori ir ugi
@@ -36,13 +36,7 @@ Formų tvarkymas: Django Crispy Forms
 
 Įdiegimas
 
-1. Reikalavimai
-
-Python 3.10 ar naujesnė versija
-
-Django 4.2 ar naujesnė versija
-
-2. Aplinka
+Aplinka
 
 Sukurkite virtualią aplinką:
 
@@ -53,10 +47,6 @@ Aktyvuokite aplinką:
 Windows:
 
 venv\Scripts\activate
-
-Mac/Linux:
-
-source venv/bin/activate
 
 Įdiekite priklausomybes:
 
