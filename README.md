@@ -85,3 +85,6 @@ templates/ – HTML šablonai.
 static/ – CSS
 
 
+
+Kontaktai aidaspalcik123@gmail.com
+
